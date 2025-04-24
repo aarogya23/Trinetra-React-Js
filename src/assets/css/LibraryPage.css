@@ -1,0 +1,401 @@
+.library-container {
+    min-height: 100vh;
+    background-color: #121212;
+    padding-bottom: 3rem;
+    color: #e0e0e0;
+  }
+  
+  .library-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .library-content h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .empty-library {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .empty-library p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+  }
+  
+  .shop-now-btn {
+    background-color: rgb(226, 147, 0);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .shop-now-btn:hover {
+    background-color: #5c9de6;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
+  }
+  
+  .library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .library-game-card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #333333;
+  }
+  
+  .library-game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    border-color: #4a90e2;
+  }
+  
+  .game-image-container {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #151515;
+  }
+  
+  .game-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .game-info {
+    padding: 1.5rem;
+  }
+  
+  .game-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+  
+  .game-key {
+    background-color: #252525;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    word-break: break-all;
+    color: #8bc34a;
+    border: 1px solid #333333;
+  }
+  
+  .game-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .action-btn {
+    flex: 1;
+    padding: 0.7rem 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  
+  .download-btn {
+    background-color: orange;
+    color: white;
+  }
+  
+  .download-btn:hover {
+    background-color: rgb(224, 174, 81);
+    box-shadow: 0 0 8px rgb(224, 174, 81);
+  }
+  
+  .view-key-btn {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+  }
+  
+  .view-key-btn:hover {
+    background-color: #3d3d3d;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 4rem 0;
+    font-size: 1.2rem;
+    color: #cccccc;
+  }
+  
+  @media (max-width: 768px) {
+    .library-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .library-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .game-actions {
+      flex-direction: column;
+    }
+  }
+
+  /* Add these additional styles to your LibraryPage.css */
+
+.library-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .library-filters {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .filter-btn {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .filter-btn:hover {
+    background-color: #3d3d3d;
+  }
+  
+  .filter-btn.active {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .empty-subtext {
+    color: #999;
+    margin-bottom: 1.5rem;
+  }
+  
+  .game-count {
+    color: #999;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .game-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+    color: #999;
+  }
+  
+  .key-label {
+    color: #999;
+    margin-right: 0.5rem;
+  }
+  
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+  }
+  
+  .loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #4a90e2;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Glowing effect for game cards on hover */
+  .library-game-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(74, 144, 226, 0.3);
+  }
+  
+  /* Custom scrollbar for the dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1e1e1e;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Add these styles to your LibraryPage.css file */
+
+/* Download overlay styling */
+.download-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 10;
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Make the image container position relative to anchor the overlay */
+  .game-image-container {
+    position: relative;
+  }
+  
+  /* Progress bar container */
+  .download-progress-container {
+    margin-left: -30px;
+    width: 90%;
+    height: 8px;
+    background-color: #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
+  }
+  
+  /* Progress bar */
+  .download-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4a90e2, orange);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 5px orange;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Animated shine effect */
+  .download-progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 1.5s infinite;
+  }
+  
+  @keyframes shine {
+    to {
+      left: 100%;
+    }
+  }
+  
+  /* Status text */
+  .download-status {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  /* Percentage indicator */
+  .download-percentage {
+    color: #8bc34a;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(139, 195, 74, 0.5);
+  }
+  
+  /* Button states */
+  .download-btn.downloading {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
+  
+  /* Complete button pulse animation */
+  .download-btn:disabled {
+    opacity: 1 !important;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgb(7, 95, 188); }
+    70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+  }
+  
+  /* Add a bit more depth to the game cards to accommodate the animation */
+  .library-game-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Visual indicator for downloading state on the entire card */
+  .library-game-card:has(.downloading) {
+    border-color: orange;
+  }
+  
+  /* Custom pulse animation when download completes */
+  .download-btn:has(+ .download-complete) {
+    animation: pulse 1.5s infinite;
+  }
+
+  .filter-btn.active {
+    background-color: orange;
+    color: white;
+}

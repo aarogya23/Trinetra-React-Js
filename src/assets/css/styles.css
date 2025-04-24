@@ -1,0 +1,766 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.logo {
+  height: 90px;
+  width: auto;
+  margin-left: 20px;
+  margin-top: -15px;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.header nav {
+  display: flex;
+  gap: 30px;
+}
+
+.header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.header nav a:hover {
+  color: #ff6b00;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Carousel Styles */
+.carousel {
+  margin-top: 10rem;
+  position: relative;
+  width: 100%; /* Changed to 100% instead of 100vw */
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel .prev,
+.carousel .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+
+/* Section Styles */
+.section {
+  margin-top: 40px;
+}
+
+.section h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ff6b00;
+  padding-bottom: 10px;
+}
+
+.game-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.game-card {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  min-width: 200px;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+
+.game-card img {
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.game-card p {
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.game-card .price {
+  color: #ff6b00;
+  font-weight: bold;
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chat-button {
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.chat-button:hover {
+  background-color: #dd772e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.chat-window {
+  width: 320px;
+  height: 400px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-header {
+  background-color: #ff6b00;
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.chat-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  max-width: 80%;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.message.bot {
+  background-color: #ff6b00;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+
+.message.user {
+  background-color: #ff6b00;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+
+.message.typing {
+  width: 50px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.chat-input input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 15px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input button {
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.chat-input button:hover {
+  background-color: #bc5810;
+}
+
+/* Add animation for clicked game cards */
+.game-card.clicked {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header nav {
+    gap: 15px;
+  }
+
+  .search-box input {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .carousel {
+    margin-top: 10rem;
+    height: 50vh;
+  }
+  .header nav {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .header nav.open {
+    display: flex;
+  }
+
+  .header nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header nav {
+    gap: 5px;
+  }
+
+  .search-box input {
+    width: 150px;
+  }
+
+  
+  .carousel {
+    margin-top: 10rem;
+    height: 50vh;
+    
+  }
+
+  .game-card {
+    width: 100%;
+  }
+}
+
+
+/* Add these styles to your existing CSS file */
+
+/* Enhanced Search Box Styling */
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-box form {
+  display: flex;
+  width: 100%;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+  width: 250px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 8px 15px;
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.search-box button:hover {
+  background-color: #df803c;
+}
+
+/* Search Results Section */
+.search-results {
+  margin-top: 120px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.clear-search {
+  padding: 8px 15px;
+  background-color: #f0f0f0;
+  color: #555;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.clear-search:hover {
+  background-color: #e5e5e5;
+  color: #333;
+}
+
+/* No Results Message */
+.no-results {
+  padding: 30px;
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.no-results p {
+  margin: 0;
+}
+
+/* Game Card Hover Animation in Search Results */
+.search-results .game-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.search-results .game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: Highlight Matching Search Terms */
+.search-results .game-card p {
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-header h2 {
+    margin-bottom: 10px;
+  }
+  
+  .search-box input {
+    width: 180px;
+  }
+}
+
+/* Ensure game list sections are horizontally scrollable */
+.game-list-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-list {
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+}
+
+.game-card {
+  flex-shrink: 0;
+  width: 200px; /* Adjust based on your card size */
+  text-align: center;
+}
+
+.scroll-arrow{
+  position: absolute;
+  top: 50%;
+  transform:translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: 10px;
+  z-index: 10;
+  font-size: 20px;
+}
+
+.scroll-arrow.prev{
+  left: 0;
+}
+
+.scroll-arrow.next{
+  right: 0;
+}
+
+@media (max-width: 768px){
+  .game-list-container{
+    position: relative;
+  }
+  .game-list{
+    padding: 0 50px;
+  }
+  .scroll-arrow{
+    display: block;
+  }
+}
+
+@media (min-width: 769px){
+  .scroll-arrow{
+    display: none;
+  }
+}
+
+/* Hide scrollbar for Webkit (Chrome, Safari) */
+.game-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.game-list {
+  scrollbar-width: none;
+}
+
+/* General horizontal scroll container */
+.game-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Arrows for left/right scroll */
+.scroll-arrow {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1;
+  padding: 0 10px;
+}
+
+/* Container to align arrows and scrollable content */
+.game-list-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Optional: Make sure game card has fixed width to allow scroll */
+.game-card {
+  min-width: 200px;
+  flex-shrink: 0;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.game-card.clicked {
+  transform: scale(1.05);
+  border-color: #007bff;
+}
+
+.scroll-arrow {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.2s;
+}
+
+.scroll-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure game list sections are horizontally scrollable */
+.game-list-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-list {
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+}
+
+.game-card {
+  flex-shrink: 0;
+  width: 200px; /* Adjust based on your card size */
+  text-align: center;
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 20px;
+}
+
+.scroll-arrow.prev {
+  left: 0;
+}
+
+.scroll-arrow.next {
+  right: 0;
+}
+
+/* Always show arrows on all screen sizes */
+.scroll-arrow {
+  display: block;
+}
+
+/* Hide scrollbar for Webkit (Chrome, Safari) */
+.game-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.game-list {
+  scrollbar-width: none;
+}
+
+/* General horizontal scroll container */
+.game-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Arrows for left/right scroll */
+.scroll-arrow {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1;
+  padding: 0 10px;
+}
+
+/* Container to align arrows and scrollable content */
+.game-list-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Optional: Make sure game card has fixed width to allow scroll */
+.game-card {
+  min-width: 200px;
+  flex-shrink: 0;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.game-card.clicked {
+  transform: scale(1.05);
+  border-color: #007bff;
+}
+
+.scroll-arrow {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.2s;
+}
+
+.scroll-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 15px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}

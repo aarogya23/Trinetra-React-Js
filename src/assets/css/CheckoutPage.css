@@ -1,0 +1,365 @@
+/* CheckoutPage.css - Dark Theme */
+
+/* Base Styles */
+.checkout-page-container {
+    background-color: #121212;
+    color: #e0e0e0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .checkout-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .checkout-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  /* Layout */
+  .checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .checkout-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Order Summary Section */
+  .order-summary-section {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .order-summary-section h2 {
+    color: orange; /* Cyan accent color */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+  }
+  
+  .order-items {
+    margin-bottom: 20px;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .order-item:last-child {
+    border-bottom: none;
+  }
+  
+  .order-item-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .order-item-image {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+    background-color: #333;
+  }
+  
+  .order-item-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  
+  .order-item-quantity {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  .order-item-price {
+    font-weight: 600;
+    color: orange; /* Cyan accent color */
+  }
+  
+  .order-totals {
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
+  
+  .order-total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .grand-total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: orange; /* Cyan accent color */
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  
+  .back-to-cart-btn {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid orange;
+    color: orange;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .back-to-cart-btn:hover {
+    background-color: rgba(0, 188, 212, 0.1);
+  }
+  
+  /* Payment Form Section */
+  .payment-form-section {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .payment-form-section h2 {
+    color: orange; /* Cyan accent color */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+  }
+  
+  .form-section {
+    margin-bottom: 30px;
+  }
+  
+  .form-section h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #bbb;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: #252525;
+    border: 1px solid #333;
+    color: #e0e0e0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: orange;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+  }
+  
+  .input-error {
+    border-color: #ff5252 !important;
+  }
+  
+  .error-message {
+    color: #ff5252;
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+  
+  /* Contact Form Separator */
+  .contact-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+    margin: 15px 0;
+  }
+  
+  .contact-separator::before,
+  .contact-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #333;
+  }
+  
+  .contact-separator::before {
+    margin-right: 10px;
+  }
+  
+  .contact-separator::after {
+    margin-left: 10px;
+  }
+  
+  /* Payment Methods */
+  .payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .payment-method {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #252525;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .payment-method:hover {
+    background-color: #2a2a2a;
+  }
+  
+  .payment-method.selected {
+    background-color: rgba(0, 188, 212, 0.1);
+    border: 1px solid orange;
+  }
+  
+  .payment-method-radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+  }
+  
+  .payment-method.selected .payment-method-radio {
+    border-color: orange;
+  }
+  
+  .radio-inner {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  
+  .radio-inner.selected {
+    background-color: orange;
+  }
+  
+  .payment-logo {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  
+  .esewa-logo {
+    color: #60bb46;
+  }
+  
+  .khalti-logo {
+    color: #5d297f;
+  }
+  
+  .ebanking-logo {
+    color: #64b5f6;
+  }
+  
+  /* Payment Info Section */
+  .payment-info-section {
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-info-text {
+    color: #bbb;
+    margin-bottom: 15px;
+  }
+  
+  .payment-instruction {
+    padding-left: 15px;
+  }
+  
+  .payment-instruction p {
+    margin-bottom: 8px;
+    color: #aaa;
+  }
+  
+  /* Submit Button */
+  .pay-now-btn {
+    width: 100%;
+    background-color: orange;
+    color: #000;
+    font-weight: 600;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .pay-now-btn:hover {
+    background-color: orange;
+    transform: translateY(-2px);
+  }
+  
+  .pay-now-btn:active {
+    transform: translateY(0);
+  }
+  
+  .secure-payment-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    color: #999;
+    font-size: 0.9rem;
+  }
+  
+  .secure-icon {
+    margin-right: 6px;
+  }
+  
+  /* Loading State */
+  .loading {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #121212;
+  }
