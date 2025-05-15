@@ -5,14 +5,15 @@ import GameDetailsPage from './GameDetailsPage';
 import CartPage from './CartPage';
 import './App.css';
 import games from './gameData.js';
-import CheckoutPage from './CheckoutPage';
+import CheckoutPage from './CheckoutPage.jsx';
 import OrderSuccessPage from './OrderSuccessPage';
-import LibraryPage from './LibraryPage';
+import LibraryPage from './LibraryPage.jsx';
 import AskAi from './AskAi';
 import OrderHistoryPage from './OrderHistoryPage.jsx';
 import AnalyticsPage from './AnalyticsPage.jsx';
 import WishlistPage from './WishlistPage';
 import ProfilePage from './ProfilePage.jsx';
+import LoginPage from './LoginPage.jsx';
 
 const App = () => {
   // Combine all game arrays into one
@@ -25,7 +26,8 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<TrinetraGamePage />} />
+      <Route path="/" element={<LoginPage />} />
+        <Route path="/TrinetraGamePage" element={<TrinetraGamePage />} />
         <Route path="/game/:gameName" element={<GameDetailsPage allGames={allGames} />} />
         <Route path="/cart" element={<CartPage />} /> 
         <Route path="/checkout" element={<CheckoutPage />} />

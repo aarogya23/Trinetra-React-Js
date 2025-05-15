@@ -85,7 +85,7 @@ const Navbar = ({ onSearch }) => {
         
         {/* Desktop Navigation */}
         <nav className="main-nav">
-          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/TrinetraGamePage" className="nav-link">Home</Link>
           <Link to="/" className="nav-link">AskAi</Link>
           <Link to="/library" className="nav-link">Library</Link>
           <Link to="/order-history" className="nav-link">History</Link>
