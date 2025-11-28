@@ -24,7 +24,7 @@ const AskAi = () => {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          "Authorization": `Bearer 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`,
+          "Authorization": `Bearer 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`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -46,7 +46,7 @@ const AskAi = () => {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          "Authorization": "Bearer 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",
+          "Authorization": "Bearer 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",
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
